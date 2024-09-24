@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Justify Content</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-rows: repeat(3,100px);
+            grid-template-columns: repeat(2,100px);
+            width: 500px;
+            height: 500px;
+            /* Justify Content determines the position of a 
+            containers content in relation to the x-axis or main axis*/
+            /* Variatons: start, center, end, space-between, space-around, space-evenly */
+            justify-content: space-around;
+            background-color: black;
+            
+        }
+      
+        .item{
+            background-color: chartreuse;
+            border: 5px solid teal;
+            /* text align aligns the text within the item based on the x axis */
+            text-align: center;
+            /* align content allows you to center the contained text on the y axis */
+            align-content: center;
+            
+        }
+        h1{
+            text-align: start;
+            color: darkgreen;
+
+        }
+
+    </style>
+</head>
+<body>
+   <h1>Justify Content</h1>
+    <div class="container">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+        <div class="item">Item 4</div>
+        <div class="item">Item 5</div>
+    </div>
+   
+
+
+</body>
+</html>

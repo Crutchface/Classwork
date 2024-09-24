@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+<body>
+    <!-- //Validation using pure HTML -->
+     <!-- input validation : do checks on both sides , like 2 factor -->
+    <!-- <form action="">
+    <label for ="username:">Username</label>
+    <input type="text" name = "username" id = "" required>
+
+    <label for ="email:">Email</label>
+    <input type="email" name = "email" id = "" required>
+    
+    <label for ="age:">Age</label>
+    <input type="number" name = "age" id = "" min="10" max="90">
+
+    <button type="submit">Submit</button>
+    </form>
+    <h3>JS Validation</h3> -->
+    <!-- Validtaion vi JS -->
+     <form action="" onsubmit= "return validateForm()">
+     <label for ="username:">Username</label>
+     <input type="text" name = "username" id = "username" >
+ 
+     <label for ="email:">Email</label>
+     <input type="text" name = "email" id = "email" >
+     
+     <label for ="age:">Age</label>
+     <input type="number" name = "age" id = "age" >
+ 
+     <button type="submit">Submit</button>
+     </form>
+
+     <script src="./script.js"></script>
+</body>
+</html>

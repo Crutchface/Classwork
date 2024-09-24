@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Box Example</title>
+    <style>
+        .container{
+            /* setting container to flexbox display */
+            display:flex;
+            background-color: burlywood;
+            /* changing the direction of my flexbox */
+            /* flex-direction: row; */
+            height: 200px;
+            /* justify content arrange your items along
+            your main aixs*/
+            /* flex-start, flex-end,
+            space-between center, space-evenly */
+            justify-content: center;
+
+
+            /* distributes the content along your cross-axis */
+            align-items: flex-end;
+
+
+            /* flex-wrap help to redistrubute items to the following line
+            as viewport changes */
+            flex-wrap:wrap;
+
+            /* align content takes effect when flex-wrap = wrap and items
+            distribute over multiple lines
+            It has similar effect as align items.
+            However, align content takes precedence when both propoerties are
+            specified in the container style.*/
+            align-content: center;
+
+        }
+        .item{
+            background-color: rgb(140, 229, 229);
+            padding: 10px;
+            margin: 5px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- by default, order = 0 for all items -->
+        <div class="item" style="order: 1;">Item 1</div>
+        <!-- align self helps to move just a sign item -->
+         <!-- flex shring and grow helps to increase the size of the item as the view port changes -->
+         <!-- flex-grow helps to increase the size fo the item as
+          the viewport increases -->
+        <div class="item" >Item 2</div>
+        <!-- use shring to control which flex items should shrink or not (shrink = 0) -->
+        <div class="item" style="order: 2; flex-shrink: 0;">Item 3</div>
+        <div class="item">Item 4</div>
+        <div class="item">Item 5</div>
+        <div class="item">Item 6</div>
+        <div class="item">Item 7</div>
+        <div class="item">Item 8</div>
+        <div class="item">Item 9</div>
+
+
+    </div>
+</body>
+</html>

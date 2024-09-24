@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model</title>
+    <style>
+        /* box model with BORDER, MARGIN, PADDING */
+        .box{
+            height: 200px;
+            width: 200px;
+            background-color: brown;
+            border: 5px solid black;
+            /* margin is space around that div element */
+            /* margin: 0px 20px 100px 5px; */
+            margin-bottom: 20px;
+
+            /* padding refers to space within the element */
+            padding: 10px 50px 88px 100px;
+            
+        }
+        .surround{
+            height: 10px;
+            background-color: bisque;
+        }
+        p{
+            text-align: justify;
+            font-size: 25px;
+        }
+        img{
+            height: 50px;
+        
+        }
+    </style>
+</head>
+<body>
+    <div class="surround"></div>
+    <div class="box">
+        <p>I am going to watch movies this weekend, and play games, and build a giant robot.</p>
+        <img src="./Images/saitlogo.png">
+    </div>
+    <div class="surround"></div>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Now!</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    
+</head>
+
+
+<body>
+    
+ 
+    <header class="header"><h1><img src="./images/HauntedPNG.png" alt="Welcome to Haunted Travel" height="150px">Welcome to Haunted Travel!</h1>
+    <br>
+    </header>
+ 
+    <article class="article">
+        <h1 class="item">Please Register for your vacation</h1>
+        <h3 class="">Please fill in your details below.</h3>
+        <br>
+    </article>
+    <div class="tipSection">
+        <p class="tip" id="lastnametip">Please enter your last name </p>
+        <p class="tip" id="firstnametip">Please enter your first name</p>
+        <p class="tip" id="usernametip">Choose a Username for your account </p>
+        <p class="tip" id="emailtip">Enter your e-mail</p>
+        <p class="tip" id="dobtip">Please enter your date of birth </p>
+        <p class="tip" id="streetaddresstip">Enter your street name</p>
+        <p class="tip" id="citytip">Enter your city of residence</p>
+        <p class="tip" id="postaltip">Enter your postal code</p>
+        <p class="tip" id="gueststip">How many guests will be on this trip?</p>
+        <p class="tip" id="mobiletip">Please enter your mobile number </p>
+
+
+        
+    </div>
+    <form class="myForm" action="" onsubmit= "return validateForm()" onreset="return clearForm()">
+            <label for="lastname">Last Name: </label>
+            <input type="text" name="lastname" id="lastname">
+            
+            <br>
+            <br>
+            <label for="firstname">First Name: </label>
+            <input type="text" name="firstname" id="firstname">
+            <br>
+            <br>
+            <label for="username">Desired Username: </label>
+            <input type="text" name="username" id="username">
+            <br>
+            <br>
+            <label for="email">Email: </label>
+            <input type="text" name="email" id="email" >
+            <br>
+            <br>
+            <label for="dob">Date of Birth: </label>
+            <input type="date" name="dob" id="dob">
+            <br>
+            <br> 
+            <label for="streetaddress">Street Address:</label>
+            <input type="text" name="streetaddress" id="streetaddress" ></input>
+            <br>
+            <br>
+            <label for="city">City</label>
+            <input type="text" name="city" id="city" ></input>
+            <br>
+            <br>
+            <label for="city">Postal Code</label>
+            <input type="text" name="postal" id="postal" ></input>
+            <br>
+            <br>
+            <label for="guests">Number of Guests</label>
+            <input type="number" min="1" name="guests" id="guests">
+            <br>
+            <br> 
+            <label for="mobile">Phone Number</label>
+            <input type="text" name="mobile" id="mobile">
+            <br>
+            <br>
+         
+            
+            
+            
+           
+            <button type="submit">Submit</button>
+            <button type="reset">Clear Form</button>
+    </form></div>
+    
+
+    
+    <script src="./index.js"></script>
+   
+    <footer class="footer">
+        <a href="./index.html">Return to our Main Page</a>
+        <p>©Copyright 2024</p>
+    </footer>
+    
+</body>
+</html>

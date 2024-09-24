@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basics of CSS</title>
+    <!-- 2. Internal CSS -->
+     <!-- Use Style within your HEAD tag with CSS selectors-->
+      <style>
+        /* CSS Selectors are html tags, classes, ids, and attributes */
+        /* HTML */
+        h3{
+            color: aqua;
+            background-color: darkblue;
+        }
+        li{
+            font-weight: 600;
+        }
+        /* Using CLASS CSS selector, put a period before class name */
+        .egg{
+            background-color: beige;
+            text-align: center;
+            font-weight: 300;
+        }
+        /* using IDs use # as prefix */
+        #round-eggs{
+            background-color: aqua;
+
+        }
+        #flat-egg{
+            background-color: brown;
+        }
+        /* Class overtakes HTML elements */
+
+      </style>
+</head>
+<body>
+    <!-- Css is Cascading Style Sheets -->
+    <h3>Grocery List</h3>
+    <ul>
+        <li class="egg" id="round-eggs">Eggs</li>
+        <li class="egg" id="flat-egg">Tissue</li>
+        <li>Water</li>
+    </ul>
+    <!-- 3 Ways to add CSS to html doc -->
+     <!-- 1.INLINE CSS is Within code as style atribute  -->
+
+ 
+    <p style="color: red; background-color: thistle; font-size: 31px; font-family: Arial, Helvetica, sans-serif;">To do this weekend.</p>
+<!--
+    Naming Conventions: 
+    snake case :round_eggs 
+    camel case : roundEggs (java,python,c++, js)
+    kebab case : round-eggs (css)
+    pascal case : RoundEggs (c#)
+     -->
+    
+</body>
+</html>

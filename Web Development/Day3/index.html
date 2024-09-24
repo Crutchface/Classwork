@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+</head>
+<body>
+    <nav>
+        <ul>
+           <a href="./contactus.html>"><li>Contact Us</li></a>
+           <a href="./coursecatalog.html>"><li>Course Catalog</li></a>
+        </ul>
+    </nav>
+
+    <article>
+    <h1>Welcome to Student Registration</h1>
+    <h3>Please fill in your details below.</h3>
+    </article>
+    <form action="sait.ca/registration" method="post">
+        <label for="lastname">Last Name</label>
+        <input type="text" name="lastname" id="lastname">
+        <br>
+        <br>
+        <label for="firstname">First Name</label>
+        <input type="text" name="firstname" id="firstname">
+        <br>
+        <br>
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username">
+        <br>
+        <br>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email">
+        <br>
+        <br>
+        <label for="dob">Date of Birth</label>
+        <input type="date" name="dob" id="dob">
+        <br>
+        <br>
+        <label for="address">Address</label>
+        <textarea name="address" id="address" cols="10" rows="5"></textarea>
+        <br>
+        <br>
+        <label for="gender">Gender</label>
+        <!-- selection box  -->
+         <!-- Value is what is sent to the server when checked and sent -->
+        <select name="gender" id="gender">
+        <option value="m">Male</option>
+        <option value="f">Female</option>
+        <option value="o">Other</option>
+        <option value="none">Prefer not to say</option>
+        </select>
+        <label for="">Fields of Interest</label>
+        <select name="fields" id="fields" size="3" multiple="true">
+        <option value="block">Block Chain</option>\
+        <option value="mobile">Mobile Apps</option>
+        <option value="cloud">Cloud Computing</option>
+        <option value="cyber">Cyber Security</option>
+        <option value="webapp">Web Applications</option>
+        <option value="internet">Internet</option>
+        </select>
+        <br>
+        <br>
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username">
+        <br>
+        <br>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" placeholder="Minimum 8 Chars" >
+        <br>
+        <br>
+        <label for="mobile">Phone Number</label>
+        <input type="tel" name="mobile" id="mobile">
+        <br>
+        <br>
+        <!-- Using the same "name" limits to one selection per -->
+        <label for="payment">Payment Type: </label>
+        <input type="radio" name="payment" id="visa">
+        <label for="visa">Visa</label>
+        <input type="radio" name="payment" id="mc">
+        <label for="mc">Master Card</label>
+        <input type="radio" name="payment" id="paypal">
+        <label for="paypal">Paypal</label>
+
+        <!-- fieldset helps to group input options together  -->
+        <br>
+        <br>
+        <fieldset>
+            <legend>Optional Selections</legend>
+            <p>Select your food preferences:</p>
+            <label for="nonuts">No Nuts</label>
+            <input type="checkbox" name="food" id="nonuts">
+            <label for="vegetarian">Vegetarian</label>
+            <input type="checkbox" name="food" id="vegetarian">
+            <label for="glutenfree">Gluten Free</label>
+            <input type="checkbox" name="food" id="glutenfree">
+            <label for="nodairy">Dairy Free</label>
+            <input type="checkbox" name="food" id="nodairy">
+            <br>
+            <br>
+            <!-- using file input type -->
+            <label for="funpic">Upload a Fun Pic</label>
+            <input type="file" name="funpic" id="funpic">
+            <br>
+            <br>
+            <label for="tagcolor">Select Perferred Tag Color</label>
+            <input type="color" name="tagcolor" id="tagcolor">
+
+         </fieldset>
+<br>
+<br>
+<!-- this button does nothing. Needs listener for javascript etc -->
+<button type="button">Ok. Thanks.</button>
+<!-- Finalize Forms and send content to defined location (form action attribute of tags) -->
+<button type="submit">Submit</button>
+<!-- Resets entire form -->
+<button type="reset">Reset Form</button>
+<footer>
+    <p>Copyright 2024</p>
+</footer>
+</body> 
+</html>

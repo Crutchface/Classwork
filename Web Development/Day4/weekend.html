@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekend Plans</title>
+    <!-- using external style sheet -->
+     <!-- <link rel="stylesheet" href="./CSS/styles.css"> -->
+     <style>
+        /* *{
+            outline: 2px dotted black;
+        } */
+        /* .weekend-plans{
+            color: brown;
+        }
+        .movies{
+            background-color: darkgray;
+        } */
+         h1,h3{
+             color: green;
+         }
+             /* using parent child selectors (OF DIV)*/
+         .movies > .completed{
+            color: blue;
+         }
+         /* descendant cascading */
+         .watch li{
+            color: crimson;
+         }
+         .watch  .list > .completed{
+            color: purple;
+         }
+         .movies p{
+            color: aquamarine;
+         }
+         h6{
+            color: blueviolet;
+         }
+         
+     </style>
+</head>
+<body>
+    
+    <!-- DIV TAGS -->
+     <hr>
+     <p>Hello</p>
+     <hr>
+    <div class="movies">
+        <h1>To Do List</h1>
+        <h3>Movies to Watch</h3>
+        <h6 class="completed">Weekend of Sept 6</h6>
+        <div class="watch">
+            <ul class="list">
+                <li>Lion King</li>
+                <li class="completed">Lord of the Rings</li>
+                <li class="completed">Wizard of Oz</li>
+            </ul>
+            
+            <p class="completed">On to the Next movies</p>
+        </div>
+    </div>
+        <h6 class="completed">Completed the Above Movies</h6>
+    
+
+    <!-- <div class="weekend-plans">
+        <h3>Plans for the Weekend</h3>
+        <ol>
+            <li>Birthday Party</li>
+            <li>Dog Park</li>
+            <li>Groceries</li>
+            <li>Gaming</li>
+            <li>Entertainment</li>
+        </ol>
+        </div>
+   -->
+</body>
+</html>
