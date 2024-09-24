@@ -75,8 +75,9 @@
 .footer{
     grid-area: footer;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     margin-top: 34px;
+
     
 }
 
@@ -133,5 +134,4 @@
     align-content: center;
     justify-content: center;
     
-   
 }

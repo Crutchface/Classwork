@@ -28,6 +28,7 @@ function validateForm(){
     // Stores a blank variable that messages are appended to throughout validation
     let errorMessage ='';
     const lastname= lastname.value;
+
     const firstname = firstname.value;
     const username = username.value;
     const dateofbirth = dob.value;
@@ -42,36 +43,36 @@ function validateForm(){
     const emailtest = emailregex.test(emailaddress);
     
 
-    if (lastname.value ==''){
-        errorMessage += "Last Name Required."
-    }
-    if (firstname.value ==''){
-        errorMessage += "Last Name Required."
-    }
-    if (username.value ==''){
-        errorMessage += "Last Name Required."
-    }
-    if (email.value ==''){
-        errorMessage += "Email Required"
-    }
-    if (dob.value ==''){
-        errorMessage += "DOB Required"
-    }
-    if (streetaddress.value == ''){
-        errorMessage += "Street Address Required"
-    }
-    if (city.value == ''){
-        errorMessage += "City Required"
-    }
-    if (postal.value == ''){
-        errorMessage += "City Required"
-    }
-    if (guests.value == ''){
-        errorMessage += "Number of Guests Required"
-    }
-    if (mobile.value == ''){
-        errorMessage += "Phone Number Required"
-    }
+    // if (lastname.value ==''){
+    //     errorMessage += "Last Name Required."
+    // }
+    // if (firstname.value ==''){
+    //     errorMessage += "Last Name Required."
+    // }
+    // if (username.value ==''){
+    //     errorMessage += "Last Name Required."
+    // }
+    // if (email.value ==''){
+    //     errorMessage += "Email Required"
+    // }
+    // if (dob.value ==''){
+    //     errorMessage += "DOB Required"
+    // }
+    // if (streetaddress.value == ''){
+    //     errorMessage += "Street Address Required"
+    // }
+    // if (city.value == ''){
+    //     errorMessage += "City Required"
+    // }
+    // if (postal.value == ''){
+    //     errorMessage += "City Required"
+    // }
+    // if (guests.value == ''){
+    //     errorMessage += "Number of Guests Required"
+    // }
+    // if (mobile.value == ''){
+    //     errorMessage += "Phone Number Required"
+    // }
 
 
 
@@ -84,6 +85,8 @@ function validateForm(){
         else {
             return false
         }
+
+
     }
     else {alert(errorMessage);
         return false;
