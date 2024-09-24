@@ -17,8 +17,9 @@ const postalregex= /^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/;
 const phoneregex = /^\d{9}$/;
 const nameregex= /^[a-zA-Z\-]+$/;
 const dobregex=  /[\w\d]+/;
-const addressregex= /\d{1,5}\s\w.\s(\b\w*\b\s){1,2}\w*\./;
-const usernameregex= /^[\w@-]{8,20}$/;
+const addressregex= /[\w\d]+/;
+const usernameregex= /^[a-zA-Z0-9](_(?!(\.|_))|\.(?!(_|\.))|[a-zA-Z0-9]){6,18}[a-zA-Z0-9]$/;
+const guestregex= /([1-9]|1\d|20)/
 
 
 
@@ -27,10 +28,11 @@ const usernameregex= /^[\w@-]{8,20}$/;
 function validateForm(){
     // Stores a blank variable that messages are appended to throughout validation
     let errorMessage ='';
-    const lastname= lastname.value;
-
-    const firstname = firstname.value;
-    const username = username.value;
+    
+    
+    const lastnametext= lastname.value;
+    const firstnametext = firstname.value;
+    const usernametext = username.value;
     const dateofbirth = dob.value;
     const address1 = streetaddress.value;
     const address2 = city.value;
@@ -40,8 +42,60 @@ function validateForm(){
     const phonenumber= mobile.value;
     
     
+    const lastnametest = nameregex.test(lastnametext);
+    const firstnametest = nameregex.test(firstnametext);
+    const usernametest = usernameregex.test(usernametext);
     const emailtest = emailregex.test(emailaddress);
+    const dobtest = dobregex.test(dateofbirth);
+    const address1test = addressregex.test(address1);
+    const address2test = addressregex.test(address2);
+    const postalcodetest = postalregex.test(postalcode);
+    const guesttest = guestregex.test(guestnumber);
+    const mobiletest = phoneregex.test(phonenumber);
+
+    console.log(lastnametest);
+    console.log(firstnametest);
+    console.log(usernametest);
+    console.log(emailtest);
+    console.log(dobtest);
+    console.log(address1test);
+    console.log(address2test);
+    console.log(postalcodetest);
+    console.log(guesttest);
+    console.log(mobiletest);
+
+
     
+     if (lastnametest == false){
+        errorMessage += "Last Name Required."
+    }
+    if (firstnametest == false){
+        errorMessage += "Last Name Required."
+    }
+    if (usernametest == false){
+        errorMessage += "Last Name Required."
+    }
+    if (emailtest ==false){
+        errorMessage += "Email Required"
+    }
+    if (dobtest == false){
+        errorMessage += "DOB Required"
+    }
+    if (address1test == false){
+        errorMessage += "Street Address Required"
+    }
+    if (address2test == false){
+        errorMessage += "City Required"
+    }
+    if (postalcodetest == false){
+        errorMessage += "City Required"
+    }
+    if (guesttest == false){
+        errorMessage += "Number of Guests Required"
+    }
+    if (mobiletest == false){
+        errorMessage += "Phone Number Required"
+    }
 
     // if (lastname.value ==''){
     //     errorMessage += "Last Name Required."
@@ -103,10 +157,6 @@ function clearForm(){
         return false
     }
 };
-
-
-
-
 
 
 var inputFields = document.getElementsByTagName("input")
