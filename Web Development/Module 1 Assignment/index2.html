@@ -21,9 +21,9 @@
             'This is the third haunted room.'
         ];
         const websites = [
-            'redirect1.html',
-            'redirect2.html',
-            'redirect3.html.'
+          'redirect1.html',
+            'http://www.amazon.com',
+            'http://www.facebook.com.'
         ];
 
         // Function to display images and descriptions
@@ -61,14 +61,11 @@
                     let windowthing = window.open(anchor, 'newwindow', 'height=570,width=520');
             
                     // Sets a timeout for our new window
-                    console.log('checkig if close', windowthing.closed);
                     setTimeout(() => {
-                        console.log('checkig if close', windowthing.closed);
-                        // windowthing.close();
-                        console.log('window attempted to close');
-                        console.log('checkig if close', windowthing.closed);
+                        windowthing.close();
+                        console.log('window attempted to close')
                         }, 3000);
-                        console.log('checkig if closeddddd', windowthing.closed);
+                        console.log('checkig if close', windowthing.closed);
                 });
                 
             };
