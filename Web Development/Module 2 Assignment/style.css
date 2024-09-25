@@ -1,0 +1,137 @@
+.fullpage{
+    display:grid;
+        grid-template-areas:
+        "header header"
+        "main main"
+        "footer footer";
+        grid-template-rows: 1fr;
+        grid-template-columns:1fr;
+               
+}
+
+
+
+
+.tipSection{
+    /* background-color: aqua; */
+    margin-bottom: 35px;
+    border: 55px;
+}
+.tip{
+    /* display: none; */
+    /* display: flex; */
+    position : absolute;
+    /* background-color: aqua; */
+    align-content: center;
+    /* margin-left:-250px; */
+    width:500px;
+    margin-top: -40px;
+    visibility: hidden;
+    margin-left: 45px;
+    color: darkgreen;
+    
+    
+   
+
+}
+
+
+.header{
+    grid-area: header;
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    font-size: 26;
+    color: black;
+    border : solid rgb(17, 108, 10);
+    border-radius: 15px;
+    /* justify-content: center; */
+    text-align: center;
+    font-family: "arial Black";
+    
+}
+.maincontent{
+    display: flex;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    justify-content: center;
+}
+
+
+/* .mainimages{
+    display: flex;
+    padding: 10px;
+    height: 1fr;
+    padding:25px;
+    align-content: center;
+    justify-content: center;
+    
+} */
+/* .mainimages>img{
+    padding:25px;
+  
+    
+} */
+
+.footer{
+    grid-area: footer;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 34px;
+
+    
+}
+
+.buttons{
+    display:flex;
+    justify-content: space-evenly;
+    
+}
+.centeredstuff{
+    display: grid;
+    padding: 65px;
+    
+}
+
+.article{
+    display : flex;
+    align-items: center;
+    /* align-content: center; */
+    /* flex: wrap; */
+    /* background-color: aqua; */
+    flex-direction: column;
+    margin-bottom: 25px ;
+
+}
+
+/* .item{
+    align-items: center;
+
+    
+} */
+.myForm{
+   
+    /* background-color: aquamarine; */
+    align-items: end;
+    flex-direction: column;
+    margin-left: 45px;
+    border-top: 45px;
+}
+
+
+.headerImage{
+    display:flex;
+    align-content: flex-start;
+}
+.headerText{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+   
+}
+
+.imagePile{
+    display :flex;
+    align-content: center;
+    justify-content: center;
+    
+}
