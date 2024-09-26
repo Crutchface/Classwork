@@ -12,6 +12,7 @@ let guests = document.querySelector("#guests");
 let mobile = document.querySelector("#mobile");
 
 // declare regex valuse for those validated with it
+// Im unsure of best practice regex for specific fields so some of these may be rudimentary.
 const emailregex= /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
 const postalregex= /^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/;
 const phoneregex = /^\d{9}$/;
@@ -24,12 +25,12 @@ const guestregex= /([1-9]|1\d|20)/
 
 
 
-// validates that the forms contain data and only passes to submit if the values contain no blank fields
+// validates that the forms contain data and only passes to submit if the values pass regex validation
 function validateForm(){
     // Stores a blank variable that messages are appended to throughout validation
     let errorMessage ='';
     
-    
+    // Storing the values of the fields that have been input into variables
     const lastnametext= lastname.value;
     const firstnametext = firstname.value;
     const usernametext = username.value;
@@ -41,7 +42,7 @@ function validateForm(){
     const emailaddress = email.value;
     const phonenumber= mobile.value;
     
-    
+    // Testing those values agianst our declared regex values
     const lastnametest = nameregex.test(lastnametext);
     const firstnametest = nameregex.test(firstnametext);
     const usernametest = usernameregex.test(usernametext);
@@ -53,19 +54,6 @@ function validateForm(){
     const guesttest = guestregex.test(guestnumber);
     const mobiletest = phoneregex.test(phonenumber);
 
-    console.log(lastnametest);
-    console.log(firstnametest);
-    console.log(usernametest);
-    console.log(emailtest);
-    console.log(dobtest);
-    console.log(address1test);
-    console.log(address2test);
-    console.log(postalcodetest);
-    console.log(guesttest);
-    console.log(mobiletest);
-
-
-    
      if (lastnametest == false){
         errorMessage += "Last Name Required."
     }
@@ -96,40 +84,6 @@ function validateForm(){
     if (mobiletest == false){
         errorMessage += "Phone Number Required"
     }
-
-    // if (lastname.value ==''){
-    //     errorMessage += "Last Name Required."
-    // }
-    // if (firstname.value ==''){
-    //     errorMessage += "Last Name Required."
-    // }
-    // if (username.value ==''){
-    //     errorMessage += "Last Name Required."
-    // }
-    // if (email.value ==''){
-    //     errorMessage += "Email Required"
-    // }
-    // if (dob.value ==''){
-    //     errorMessage += "DOB Required"
-    // }
-    // if (streetaddress.value == ''){
-    //     errorMessage += "Street Address Required"
-    // }
-    // if (city.value == ''){
-    //     errorMessage += "City Required"
-    // }
-    // if (postal.value == ''){
-    //     errorMessage += "City Required"
-    // }
-    // if (guests.value == ''){
-    //     errorMessage += "Number of Guests Required"
-    // }
-    // if (mobile.value == ''){
-    //     errorMessage += "Phone Number Required"
-    // }
-
-
-
     
     if (errorMessage == ''){
         var agree = confirm("Are you sure you would like to submit??");
@@ -139,7 +93,6 @@ function validateForm(){
         else {
             return false
         }
-
 
     }
     else {alert(errorMessage);
@@ -158,36 +111,24 @@ function clearForm(){
     }
 };
 
-
+// grabs all the input fields in the html document and store them in an array
 var inputFields = document.getElementsByTagName("input")
-
 // iterate over each of the buttons we just grabbed
 for(i=0;i < inputFields.length;i++){
     
     // buttons[i].id will give us the id of the button for the current loop iteration,
     // so we feed that into getElementById.
-    // Then we add an event listener on each one, which will turn it red when you click it
+    // Then we add an event listener on each one, which will turn on our tooltips with css
     
     document.getElementById(inputFields[i].id).addEventListener("focus",function(){
-    this.style.backgroundColor="red";
     var tipname = this.id +"tip";
-    console.log(tipname);
     document.getElementById(tipname).style.visibility ="visible";
-        
-    
     });
 
-
-
-
-
+    // does the same thing but for the blur function and hides the previously unhidden tip
     document.getElementById(inputFields[i].id).addEventListener("blur",function(){
-        this.style.backgroundColor="";
         var tipname2 = this.id +"tip";
-        console.log(tipname2);
         document.getElementById(tipname2).style.visibility ="hidden";
-
-
     });
     
     }

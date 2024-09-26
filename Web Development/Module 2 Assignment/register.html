@@ -13,19 +13,20 @@
 
 <body>
     
- 
+ <!-- Styled Header  -->
     <div class="fullpage">
         <header class="header">
            
             <div class="headerText"><h1 >Welcome to Travel Experts.</h1></div>
             <div class="headerImage"><img src="./images/HauntedPNG.png" alt="Welcome to Haunted Travel" height="150px"></div>
             </header>
- 
+ <!-- Instructions for form  -->
     <article class="article">
         <h1 class="item">Please Register for your vacation</h1>
         <h3 class="">Please fill in your details below.</h3>
         <br>
     </article>
+    <!-- This section is styled with an absolute position and hidden and un-hidden with css to provide tooltips -->
     <div class="tipSection">
         <p class="tip" id="lastnametip">Please enter your last name</p>
         <p class="tip" id="firstnametip">Please enter your first name</p>
@@ -37,10 +38,8 @@
         <p class="tip" id="postaltip">Enter your Canadian postal code</p>
         <p class="tip" id="gueststip">How many guests will be on this trip?</p>
         <p class="tip" id="mobiletip">Please enter your mobile number. Nine digits only</p>
-
-
-        
     </div>
+    <!-- Form input for gregistration, uses Regex validation for inputs -->
     <form class="myForm" action="" onsubmit= "return validateForm()" onreset="return clearForm()">
             <label for="lastname">Last Name: </label>
             <input type="text" name="lastname" id="lastname">
@@ -83,19 +82,15 @@
             <input type="text" name="mobile" id="mobile">
             <br>
             <br>
-         
-            
-            
-            
-           
+         <!-- Submit button to call function, and clear form button with confirmation windows -->
             <button type="submit">Submit</button>
             <button type="reset">Clear Form</button>
     </form></div>
     
 
-    
+    <!-- Loading in our JS file -->
     <script src="./index.js"></script>
-   
+   <!-- Styled Footer -->
     <footer class="footer">
         <a href="./contact.html"><img src="./images/contact.png" alt="Contact us!" ></a>
         <p>©Copyright 2024</p>

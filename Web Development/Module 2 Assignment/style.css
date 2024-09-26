@@ -1,3 +1,4 @@
+/* Arranges our page and does basic styling for the main page */
 .fullpage{
     display:grid;
         grid-template-areas:
@@ -5,36 +6,25 @@
         "main main"
         "footer footer";
         grid-template-rows: 1fr;
-        grid-template-columns:1fr;
-               
+        grid-template-columns:1fr;    
 }
-
-
-
-
+/* MAkes a space for our tooltips on the register page */
 .tipSection{
-    /* background-color: aqua; */
+
     margin-bottom: 35px;
     border: 55px;
 }
+/* Styles our tips and allows is to toggle hidden and visible values for our focus event */
 .tip{
-    /* display: none; */
-    /* display: flex; */
     position : absolute;
-    /* background-color: aqua; */
     align-content: center;
-    /* margin-left:-250px; */
     width:500px;
     margin-top: -40px;
     visibility: hidden;
     margin-left: 45px;
     color: darkgreen;
-    
-    
-   
-
 }
-
+/* Styles our header for all pages */
 .header{
     grid-area: header;
     display: flex;
@@ -48,12 +38,14 @@
     background-image: linear-gradient(rgb(47, 149, 81), rgb(255, 255, 255));
     letter-spacing: 3px;
 }
+/* Styling our header image */
 .headerImage{
     display:flex;
     position:absolute;
     left: -10px;
     opacity: 50%;
 }
+/* Styles our header text*/
 .headerText{
     display: flex;
     align-content: center;
@@ -61,6 +53,7 @@
 
    
 }
+/* Styling for our main pages */
 .maincontent{
     display: flex;
     padding-bottom: 50px;
@@ -68,12 +61,13 @@
     justify-content: center;
     
 }
-
+/* Makes our page extend fullscreen to allow our footer style to stick to the bottom */
 .fullpage{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
+/* Styles and sticks our footer to the bottom of the page */
 .footer{
     grid-area: footer;
     display: flex;
@@ -83,12 +77,8 @@
     background-image: linear-gradient( rgb(255, 255, 255),rgb(47, 149, 81));
     margin-top: auto;
     align-items: center;
-    
-
-
-    
 }
-
+/* STyles buttons */
 .buttons{
     display:flex;
     justify-content: space-evenly;
@@ -99,34 +89,25 @@
     padding: 65px;
     
 }
-
+/* Styles the header of pages */
 .article{
     display : flex;
     align-items: center;
-    /* align-content: center; */
-    /* flex: wrap; */
-    /* background-color: aqua; */
     flex-direction: column;
     margin-bottom: 25px ;
 
 }
 
-/* .item{
-    align-items: center;
-
-    
-} */
+/* styles the form */
 .myForm{
    
-    /* background-color: aquamarine; */
     align-items: end;
     flex-direction: column;
     margin-left: 45px;
     border-top: 45px;
 }
 
-
-
+/* Styles the tables */
 .imagePile{
     display :flex;
     align-content: center;
@@ -135,6 +116,8 @@
     margin-bottom: 25px ;
     
 }
+
+/* Styling for our redirect pages */
 .redirectheader{
     display: flex;
     text-align: center;
