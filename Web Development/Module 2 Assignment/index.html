@@ -53,10 +53,12 @@
                 descDiv.appendChild(newRow);
                 // finally sends to table body in html
                 tableBody.appendChild(descDiv);
+                
                // adds a mouseover that adds spcific image to the inner HTML
                descCel.onmouseover=function(){
                     const divNumber = document.getElementsByClassName('descDiv');
                     divNumber[i].innerHTML =images[i];};
+                
                 //adds listener for our clicks
                 descDiv.addEventListener("click", function(){
                     const divNumber = document.getElementsByClassName('descDiv');
@@ -68,7 +70,7 @@
                     setTimeout(() => {
                         windowthing.close();
                         console.log('window attempted to close')
-                        }, 3000);
+                        }, 5000);
                         console.log('checkig if close', windowthing.closed);
                 });
                 
