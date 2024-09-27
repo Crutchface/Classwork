@@ -68,10 +68,23 @@ console.log(parsedAddress.pathname);
 // saves the file variable as . and the path requested in that request
 let file = "." + parsedAddress.pathname;
 // Reads and loads data from that file (if it exists)
-fs.readFile(file, (err, data) => {
-    // writes metadata to write data to
-response.writeHead(200, { "Content-Type": "text/html" });
-response.write(data);
-return response.end();
+    fs.readFile(file, (err, data) => {
+        // writes metadata to write data to
+        if (err){
+            // response.writeHead(404, { "Content-Type": "text/html" });
+            // response.write("<h1>404: Page Not Found</h1>");
+            // return response.end();
+            fs.readFile("404.html", (err, errdata)=>{
+                        res.writeHead(404, {"Content-Type" : "text/html"});
+                        res.write(errdata);
+                        res.end();
+                    });
+        }
+    response.writeHead(200, { "Content-Type": "text/html" });
+    response.write(data);
+    return response.end();
 });
+if(file ===)
+
 }).listen(8000);
+

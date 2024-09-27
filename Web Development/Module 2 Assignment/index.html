@@ -71,7 +71,7 @@
                     let windowtime =setTimeout(() => {
                         windowthing.close();
                         // window.open(websites[i]);
-                        windowthing.document.write(window.open(websites[i]));
+                        windowthing.document.write(window.location.replace(websites[i]));
                         console.log('window attempted to close');
                     }, 5000);
                     windowthing.window.addEventListener('load', () => {
