@@ -21,7 +21,7 @@
             'This is the third haunted room.'
         ];
         const websites = [
-          'redirect1.html',
+            'http://www.sait.ca',
             'http://www.amazon.com',
             'http://www.facebook.com.'
         ];
@@ -56,21 +56,31 @@
                 //adds listener for our clicks
                 descDiv.addEventListener("click", function(){
                     const divNumber = document.getElementsByClassName('descDiv');
-                    const anchor = websites[i];
+                    const anchor = "redirect1.html";
                     console.log('window opened', websites[i])
                     let windowthing = window.open(anchor, 'newwindow', 'height=570,width=520');
-            
+                    
                     // Sets a timeout for our new window
-                    setTimeout(() => {
+                    let windowtime =setTimeout(() => {
                         windowthing.close();
-                        console.log('window attempted to close')
-                        }, 3000);
+                        // window.open(websites[i]);
+                        windowthing.document.write(window.open(websites[i]));
+                        console.log('window attempted to close');
+                    }, 3000);
+                    windowthing.window.addEventListener('load', () => {
+                    windowthing.window.addEventListener('unload', () => {
+                    clearTimeout(windowtime);
+                    console.log("Window Closed");
+        
+    });
+});
                         console.log('checkig if close', windowthing.closed);
                 });
                 
             };
             
         };
+       
         // Call the function to display images on page load
         window.onload = displayImages;
         

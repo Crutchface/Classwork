@@ -24,10 +24,10 @@
             'Fort Garry Hotel Package.'
         ];
         const websites = [
-            'redirect1.html',
-            'redirect2.html',
-            'redirect3.html',
-            'redirect4.html'
+            'https://www.fairmont.com/banff-springs/ ',
+            'https://www.fairmont.com/empress-victoria/',
+            'https://www.fairmont.com/frontenac-quebec',
+            'https://www.fortgarryhotel.com/'
 
         ];
 
@@ -63,21 +63,31 @@
                 //adds listener for our clicks
                 descDiv.addEventListener("click", function(){
                     const divNumber = document.getElementsByClassName('descDiv');
-                    const anchor = websites[i];
+                    const anchor = "redirect.html";
                     console.log('window opened', websites[i])
                     let windowthing = window.open(anchor, 'newwindow', 'height=570,width=520');
             
                     // Sets a timeout for our new window
-                    setTimeout(() => {
+                    let windowtime =setTimeout(() => {
                         windowthing.close();
-                        console.log('window attempted to close')
-                        }, 5000);
+                        // window.open(websites[i]);
+                        windowthing.document.write(window.open(websites[i]));
+                        console.log('window attempted to close');
+                    }, 5000);
+                    windowthing.window.addEventListener('load', () => {
+                    windowthing.window.addEventListener('unload', () => {
+                    clearTimeout(windowtime);
+                    console.log("Window Closed");
+        
+    });
+});
                         console.log('checkig if close', windowthing.closed);
                 });
                 
             };
             
         };
+       
         // Call the function to display images on page load
         window.onload = displayImages;
         
