@@ -4,6 +4,11 @@ const http = require("http");
 const fs = require("fs");
 
 const url = require("url");
+
+const randomGreeting = require("./randomgreeting");
+
+console.log(randomGreeting.websiteGreeting());
+
 // let address = "http://localhost:8000/demo.html?year=2019&month=october";
 // let parsedAddress = url.parse(address, true);
 
@@ -60,6 +65,16 @@ const url = require("url");
 // const url = require("url");
 // Create HTTP server and listen on port 8000 for requests
 
+
+
+
+
+
+
+
+
+
+
 http.createServer((request, response) => {
 // takes the requested address and stores it in an object
 let parsedAddress = url.parse(request.url, true);
@@ -69,9 +84,21 @@ console.log(parsedAddress.pathname);
 let file = "." + parsedAddress.pathname;
 // Reads and loads data from that file (if it exists)
 fs.readFile(file, (err, data) => {
+    
+
+    if (err){
+        response.writeHead(404, { "Content-Type": "text/html" });
+        response.write("<h1>404: Page Not Found</h1>");
+        
+        return response.end();
     // writes metadata to write data to
+    }
 response.writeHead(200, { "Content-Type": "text/html" });
-response.write(data);
+console.log(randomGreeting.websiteGreeting());
+response.write(data + (randomGreeting.websiteGreeting()));
+// response.write(randomGreeting.websiteGreeting());
+    
 return response.end();
 });
+
 }).listen(8000);
