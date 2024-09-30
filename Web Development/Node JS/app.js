@@ -105,7 +105,7 @@ response.writeHead(200, { "Content-Type": "text/html" });
 // console.log(randomGreeting.websiteGreeting());
     // console.log($);
     const $ = cheerio.load(data);
-    $('.quoteOfTheDay').html("<p>"+randomGreeting.websiteGreeting()+"</p>");
+    $('.quoteOfTheDay').html("<p> class='quoteOfTheDay'"+randomGreeting.websiteGreeting()+"</p>");
     const modifiedHtml = $.html();
 
     // console.log(modifiedHtml);

@@ -46,6 +46,7 @@ footer{
 .main{
     
     text-align: center;
+    margin-bottom: 80px;
 }
 table{
     display: flex;
@@ -64,3 +65,12 @@ a:link {
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
+
+.quoteOfTheDay{
+    color: darkred;
+    font-size: larger;
+    font-weight: 400;
+    font-family: fantasy;
+
+
+}
