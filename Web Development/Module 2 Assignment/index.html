@@ -64,24 +64,23 @@
                 descDiv.addEventListener("click", function(){
                     const divNumber = document.getElementsByClassName('descDiv');
                     const anchor = "redirect.html";
-                    console.log('window opened', websites[i])
                     let windowthing = window.open(anchor, 'newwindow', 'height=570,width=520');
             
                     // Sets a timeout for our new window
-                    let windowtime =setTimeout(() => {
+                    let windowTime =setTimeout(() => {
                         windowthing.close();
                         // window.open(websites[i]);
                         windowthing.document.write(window.location.replace(websites[i]));
-                        console.log('window attempted to close');
+                        
                     }, 5000);
+                    // aadds a listener event for the loading and unloading of the page
                     windowthing.window.addEventListener('load', () => {
-                    windowthing.window.addEventListener('unload', () => {
-                    clearTimeout(windowtime);
-                    console.log("Window Closed");
-        
-    });
-});
-                        console.log('checkig if close', windowthing.closed);
+                        windowthing.window.addEventListener('unload', () => {
+                        // clears the timeout we've set with the clearTimeout function
+                        clearTimeout(windowTime);
+                         });
+                    });
+                
                 });
                 
             };
@@ -89,9 +88,9 @@
         };
        
         // Call the function to display images on page load
-        window.onload = displayImages;
+    window.onload = displayImages;
         
-    </script>
+</script>
      
     
 </head>

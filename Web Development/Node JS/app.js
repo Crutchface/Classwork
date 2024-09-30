@@ -6,8 +6,10 @@ const fs = require("fs");
 const url = require("url");
 
 const randomGreeting = require("./randomgreeting");
+const cheerio = require('cheerio');
 
-console.log(randomGreeting.websiteGreeting());
+
+// console.log(randomGreeting.websiteGreeting());
 
 // let address = "http://localhost:8000/demo.html?year=2019&month=october";
 // let parsedAddress = url.parse(address, true);
@@ -89,15 +91,25 @@ fs.readFile(file, (err, data) => {
     if (err){
         response.writeHead(404, { "Content-Type": "text/html" });
         response.write("<h1>404: Page Not Found</h1>");
-        
         return response.end();
     // writes metadata to write data to
     }
+
+// const addedHTML =
+
+
 response.writeHead(200, { "Content-Type": "text/html" });
-console.log(randomGreeting.websiteGreeting());
-response.write(data + (randomGreeting.websiteGreeting()));
-// response.write(randomGreeting.websiteGreeting());
-    
+
+
+// response.write(data);
+// console.log(randomGreeting.websiteGreeting());
+    // console.log($);
+    const $ = cheerio.load(data);
+    $('.quoteOfTheDay').html("<p>"+randomGreeting.websiteGreeting()+"</p>");
+    const modifiedHtml = $.html();
+
+    // console.log(modifiedHtml);
+    response.write(modifiedHtml);
 return response.end();
 });
 
