@@ -1,3 +1,5 @@
+//  Chris Ferguson CPRG 210 Module 2 Assignment - Javascript, CSS, HTML - Sept 30th 2024 
+
 // Takes all the information from the filled in forms and passes it to the JS via DOM
 
 let lastName = document.querySelector("#lastName");
