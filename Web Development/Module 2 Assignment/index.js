@@ -1,11 +1,11 @@
 // Takes all the information from the filled in forms and passes it to the JS via DOM
 
-let lastname = document.querySelector("#lastname");
-let firstname = document.querySelector("#firstname");
-let username = document.querySelector("#username");
+let lastName = document.querySelector("#lastName");
+let firstName = document.querySelector("#firstName");
+let userName = document.querySelector("#userName");
 let email = document.querySelector("#email");
 let dob = document.querySelector("#dob");
-let streetaddress = document.querySelector("#streetaddress");
+let streetAddress = document.querySelector("#streetAddress");
 let city = document.querySelector("#city");
 let postal = document.querySelector("#postal");
 let guests = document.querySelector("#guests");
@@ -13,14 +13,14 @@ let mobile = document.querySelector("#mobile");
 
 // declare regex valuse for those validated with it
 // Im unsure of best practice regex for specific fields so some of these may be rudimentary.
-const emailregex= /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-const postalregex= /^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/;
-const phoneregex = /^\d{9}$/;
-const nameregex= /^[a-zA-Z\-]+$/;
-const dobregex=  /[\w\d]+/;
-const addressregex= /[\w\d]+/;
-const usernameregex= /^[a-zA-Z0-9](_(?!(\.|_))|\.(?!(_|\.))|[a-zA-Z0-9]){6,18}[a-zA-Z0-9]$/;
-const guestregex= /([1-9]|1\d|20)/
+const emailRegex= /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+const postalRegex= /^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/;
+const phoneRegex = /^\d{9}$/;
+const nameRegex= /^[a-zA-Z\-]+$/;
+const dobRegex=  /[\w\d]+/;
+const addressRegex= /[\w\d]+/;
+const userNameRegex= /^[a-zA-Z0-9](_(?!(\.|_))|\.(?!(_|\.))|[a-zA-Z0-9]){6,18}[a-zA-Z0-9]$/;
+const guestRegex= /([1-9]|1\d|20)/
 
 
 
@@ -31,42 +31,42 @@ function validateForm(){
     let errorMessage ='';
     
     // Storing the values of the fields that have been input into variables
-    const lastnametext= lastname.value;
-    const firstnametext = firstname.value;
-    const usernametext = username.value;
-    const dateofbirth = dob.value;
-    const address1 = streetaddress.value;
+    const lastNameText= lastName.value;
+    const firstNametext = firstName.value;
+    const userNametext = userName.value;
+    const dateOfBirth = dob.value;
+    const address1 = streetAddress.value;
     const address2 = city.value;
-    const postalcode= postal.value; 
-    const guestnumber = guests.value;
-    const emailaddress = email.value;
-    const phonenumber= mobile.value;
+    const postalCode= postal.value; 
+    const guestNumber = guests.value;
+    const emailAddress = email.value;
+    const phoneNumber= mobile.value;
     
     // Testing those values agianst our declared regex values
-    const lastnametest = nameregex.test(lastnametext);
-    const firstnametest = nameregex.test(firstnametext);
-    const usernametest = usernameregex.test(usernametext);
-    const emailtest = emailregex.test(emailaddress);
-    const dobtest = dobregex.test(dateofbirth);
-    const address1test = addressregex.test(address1);
-    const address2test = addressregex.test(address2);
-    const postalcodetest = postalregex.test(postalcode);
-    const guesttest = guestregex.test(guestnumber);
-    const mobiletest = phoneregex.test(phonenumber);
+    const lastNametest = nameRegex.test(lastNameText);
+    const firstNametest = nameRegex.test(firstNametext);
+    const userNametest = userNameRegex.test(userNametext);
+    const emailTest = emailRegex.test(emailAddress);
+    const dobTest = dobRegex.test(dateOfBirth);
+    const address1test = addressRegex.test(address1);
+    const address2test = addressRegex.test(address2);
+    const postalCodeTest = postalRegex.test(postalCode);
+    const guestTest = guestRegex.test(guestNumber);
+    const mobileTest = phoneRegex.test(phoneNumber);
 
-     if (lastnametest == false){
+     if (lastNametest == false){
         errorMessage += "Last Name Required."
     }
-    if (firstnametest == false){
+    if (firstNametest == false){
         errorMessage += "Last Name Required."
     }
-    if (usernametest == false){
+    if (userNametest == false){
         errorMessage += "Last Name Required."
     }
-    if (emailtest ==false){
+    if (emailTest ==false){
         errorMessage += "Email Required"
     }
-    if (dobtest == false){
+    if (dobTest == false){
         errorMessage += "DOB Required"
     }
     if (address1test == false){
@@ -75,13 +75,13 @@ function validateForm(){
     if (address2test == false){
         errorMessage += "City Required"
     }
-    if (postalcodetest == false){
+    if (postalCodeTest == false){
         errorMessage += "City Required"
     }
-    if (guesttest == false){
+    if (guestTest == false){
         errorMessage += "Number of Guests Required"
     }
-    if (mobiletest == false){
+    if (mobileTest == false){
         errorMessage += "Phone Number Required"
     }
     
@@ -121,13 +121,13 @@ for(i=0;i < inputFields.length;i++){
     // Then we add an event listener on each one, which will turn on our tooltips with css
     
     document.getElementById(inputFields[i].id).addEventListener("focus",function(){
-    var tipname = this.id +"tip";
+    var tipname = this.id +"Tip";
     document.getElementById(tipname).style.visibility ="visible";
     });
 
     // does the same thing but for the blur function and hides the previously unhidden tip
     document.getElementById(inputFields[i].id).addEventListener("blur",function(){
-        var tipname2 = this.id +"tip";
+        var tipname2 = this.id +"Tip";
         document.getElementById(tipname2).style.visibility ="hidden";
     });
     
