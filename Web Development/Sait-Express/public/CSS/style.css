@@ -12,6 +12,7 @@ header{
     font-size: x-large;
     color: white;
     background-image: url(/images/placeholder.jpg);
+    background-size: cover;
     
 }
 
@@ -32,7 +33,7 @@ footer{
     bottom: 0;
     width: 100%;
     height: 50px;
-    margin-bottom: ;
+    margin-bottom:none;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
     
