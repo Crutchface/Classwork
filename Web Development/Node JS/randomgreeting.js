@@ -23,13 +23,13 @@ const greeting = [
     
     'Fizban the Fabulous: "Even the smallest creature can change the course of destiny."',
     
-    'Luna (a character inspired by the game): "In darkness, we find our true selves."',
+    'Luna : "In darkness, we find our true selves."',
     
     'Asmodeus: "In every deal, there is a cost; be sure you can afford it."',
     
     'The Raven Queen: "Life is but a fleeting shadow; embrace the darkness that follows."',
     
-    'Sylgar (an NPC from The Wild Beyond the Witchlight): "Joy can be found even in the most unexpected places."',
+    'Sylgar : "Joy can be found even in the most unexpected places."',
     
     'Kobold King: "We may be small, but our hearts are mighty!"',
     

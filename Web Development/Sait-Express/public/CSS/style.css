@@ -1,0 +1,87 @@
+
+
+body{
+    margin: 0;
+    
+}
+header{
+    background-color: rgb(120, 6, 6);
+    text-align: center;
+    padding: 25px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: x-large;
+    color: white;
+    background-image: url(/images/placeholder.jpg);
+    
+}
+
+/* section{
+    text-align: center;
+    margin-bottom: 100px;
+} */
+
+footer{
+    display: flex;
+    justify-content: space-around;
+    background-color:  rgb(120, 6, 6);
+    color: white;
+    /* height: 50px; */
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    margin-bottom: ;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+    
+}
+.footer:link{
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.frontImages{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main{
+    
+    text-align: center;
+    margin-bottom: 80px;
+}
+table{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 200px;
+}
+.errorText{
+    display: flex;
+    font-size: 100px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 900;
+    justify-content: center;
+}
+a:link {
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+  }
+
+.quoteOfTheDay{
+    color: darkred;
+    font-size: larger;
+    font-weight: 400;
+    font-family: fantasy;
+
+
+}
+
+a:visited {
+    color: white;
+    text-decoration: none;
+  }
