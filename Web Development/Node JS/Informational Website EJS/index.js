@@ -5,6 +5,8 @@ const app = express();
 const port =8000;
 const path = require("path");
 const randomGreeting = require("./randomgreeting");
+// array for users
+let users =[];
 // const greeting =randomGreeting.websiteGreeting()
 // Root Dir
 
@@ -41,6 +43,14 @@ app.get('/about', (req, res)=>{
     res.render('about');
 });
 
+// Add User
+app.post('/add-user', (req, res)=>{
+    // adding each user to an array defined at top
+    const { firstName, userName, email } = req.body;
+    users.push({firstName, userName, email});
+    console.log(req.body)
+    res.redirect('/')
+});
 
 
 // app.get('/', (req, res)=>{

@@ -37,7 +37,8 @@
         </tr>
       </table>
     </div>
-    <form class="contactForm">
+    
+    <form class="contactForm" action="/add-user" method="post">
         <div class="inputDiv"><label for="firstName">First Name: </label>
             <input type="text" name="firstName" id="firstName">
         <br></div>
@@ -47,6 +48,8 @@
         <div class="inputDiv"><label for="email">Email: </label>
             <input type="email" name="email" id="email" >
         <br></div>
+        <button class="inputDiv" type="submit">Add User</button>
+        
     </form>
 
     <%- include('includes/footer.ejs') %>
