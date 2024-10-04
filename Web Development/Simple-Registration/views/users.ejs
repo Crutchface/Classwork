@@ -1,0 +1,17 @@
+
+
+    <%- include('includes/header.ejs') %>
+    <h1>All Users</h1>
+    <% if (users.length > 0) { %>
+        <ol>
+            <% users.forEach(user => { %>
+             <li><%= user.name %></li>
+            <% }) %>
+            </ol>
+    
+   <% } else { %>
+    <h2> No users</h2>
+    <% } %>
+    
+</body>
+</html>

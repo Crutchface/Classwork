@@ -1,0 +1,10 @@
+<%- include('includes/layout.ejs') %>
+
+<ul>
+    <% allUsers.forEach(person => { %>
+        <li> Name : <%= person.name %> Email: <%= person.email %> Phone : <%= person.phone %> Address : <%= person.address %> Postal : <%= person.postal %> Course : <%= person.course %></li>
+    <% }) %>
+</ul>
+    
+</body>
+</html>

@@ -1,0 +1,8 @@
+extends layout 
+
+block content
+
+    body 
+        ul
+            each person in allUsers
+                li="Name: "+person.name+" Email: "+person.email+" Phone: "+ person.phone+" Address: "+ person.address+" Postal: "+ person.postal+" Course: "+ person.course

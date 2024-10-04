@@ -1,0 +1,19 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  title 404
+  link(rel='stylesheet', type='text/css', href='/CSS/style.css')
+  link(rel='icon', href='data:,')
+header.header
+  h1.headerText 404
+.main
+  p.errorText 404
+  p Sorry! Page not found! 
+  p You were looking for: #{errorPage}
+  br
+.footer
+  footer
+    a(href='./about.html') About
+    a(href='./contact.html') Contact
+    a(href='./home.html') Home

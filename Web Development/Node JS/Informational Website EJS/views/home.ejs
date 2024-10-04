@@ -1,0 +1,41 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home EJS</title>
+    <link rel="stylesheet" type="text/css" href="CSS/style.css">
+    <link rel="icon" href="data:,">
+
+</head>
+<body> -->
+    
+<%- include('includes/header.ejs') %>
+    <header class="header" >
+        <h1 class="headerText">Welcome to the page about Dungeons and Dragons</h1>
+    </header>
+
+    <div class = "main">
+    <p>This is my homepage.Here you could find all sorts of information about dungeons and dragons. </p>
+    <br>
+    <br>
+    <div class="frontImages">
+        <img src="./images/monster.jpg" width =300>
+        <img src="./images/player.jpg" width =420>
+
+    </div>
+
+    <P class="quoteOfTheDay"><%= greet %></P>
+
+
+    </div>
+
+    <%- include('includes/footer.ejs') %>
+    <!-- <div class = "footer">
+        <footer>
+            <a href="./about">About</a><a href="./contact">Contact</a><a href="/">Home</a>
+        </footer>
+    </div>
+    
+</body>
+</html> -->

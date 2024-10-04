@@ -1,0 +1,20 @@
+{
+  "name": "in-class-assignment-oct-2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.0",
+    "language": "^0.4.0",
+    "nodemon": "^3.1.7",
+    "pug": "^3.0.3",
+    "support": "^1.1.4"
+  }
+}

@@ -1,0 +1,37 @@
+extends layout
+
+block content
+  h1= title
+  if errorMessages 
+    each error in errorMessages 
+      p=error 
+  form(action="/register", method="POST")
+    div.form-group
+      label(for="name") Name
+      input.form-control(type="text", name="name", id="name", required=true, placeholder="Enter your name")
+
+    div.form-group
+      label(for="email") Email
+      input.form-control(type="email", name="email", id="email", required=true, placeholder="Enter your email")
+
+    div.form-group
+      label(for="phone") Phone Number
+      input.form-control(type="text", name="phone", id="phone", required=true, placeholder="Enter your phone number")
+
+    div.form-group
+      label(for="address") Address
+      input.form-control(type="text", name="address", id="address", required=true, placeholder="Enter your Address")
+
+    div.form-group
+      label(for="postal") Postal Code
+      input.form-control(type="text", name="postal", id="postal", required=true, placeholder="Enter your Postal Code")
+
+    div.form-group
+      label(for="course") Course
+      select.form-control(name="course", id="course", required=true)
+        option(value="Computer Science") Computer Science
+        option(value="Mathematics") Mathematics
+        option(value="Physics") Physics
+        option(value="Engineering") Engineering
+
+    button.btn.btn-success(type="submit") Submit

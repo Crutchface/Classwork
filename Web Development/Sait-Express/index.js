@@ -8,6 +8,8 @@ const express = require("express");
 const path = require("path");
 
 const app = express();
+
+
 // Define port number
 const port = 8000;
 // retrieves the directory of the application. A function of node.js
