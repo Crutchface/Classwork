@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>course list</title>
+</head>
+<body>
+    
+
+    <h1>List of all Courses</h1>
+    
+    <ul>
+        <% courses.forEach(course => { %>
+         <li>
+            <%= course.coursename +" | "+course.reference+" | "+course.teacher %>
+
+            <a href="editcourse/<%= course.id %>">Update</a>
+            <a href="deletecourses/<%= course.id %>">Delete</a>
+         </li>
+        <% }) %>
+
+    </ul>
+
+    <a href="/addcourse">Add New Course</a>
+
+    
+</body>
+</html>
