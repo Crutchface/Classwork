@@ -8,7 +8,8 @@ USE `travelexperts`;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `affiliations`
+-- Table structure for table `affiliations`students
+courses
 --
 
 CREATE TABLE `affiliations` (

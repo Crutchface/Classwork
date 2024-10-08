@@ -9,6 +9,7 @@ const port = 8000;
 app.use(express.urlencoded({extended : true}))
 // Set view Engine
 app.set('view engine', 'ejs')
+
 // Test connection to DB
 db.connect((err)=>{
     if (err) throw err;
@@ -22,6 +23,7 @@ db.connect((err)=>{
 app.get('/', (req, res)=>{
     // writes query
     const sql = 'select * from students';
+    // const sql2 = 'select * from courses';
     // execute the query
     db.query(sql, (err, result)=>{
         if(err) throw err;
@@ -77,6 +79,7 @@ app.post('/edit/:id', (req, res)=>{
 // ===========================================================================================
 // COURSES
 // ===========================================================================================
+
 // retrieve all students from db
 app.get('/courses', (req, res)=>{
     // writes query
@@ -116,12 +119,12 @@ app.get('/editcourse/:id', (req, res)=>{
     });
 });
 // DELETE details of a student
-app.get('/deletecourse/:id', (req, res)=>{
+app.get('/deletecourses/:id', (req, res)=>{
     const sql = 'DELETE FROM courses WHERE id = ?';
     db.query(sql, [req.params.id], (err, result)=>{
         if(err) throw err;
         console.log("course data deleted");
-        res.redirect('/');
+        res.redirect('/courses');
     });
 });
 // handle student update w/ post
@@ -135,6 +138,30 @@ app.post('/editcourse/:id', (req, res)=>{
     })
 });
 
+// ===============================================================================
+// Grades Endpoints
+// ===============================================================================
+
+app.get('/grades' , (req, res)=>{
+    const sql= 'SELECT * FROM students';
+    const sql2 = 'SELECT * FROM courses';
+    db.query(sql,(err, result)=>{
+        db.query(sql2, (err,result2)=>{
+            // console.log(result, result2);
+            res.render('grades', {studentList: result, courseList:result2 })
+        })
+    })
+});
+
+app.post('/addgrades', (req, res)=>{
+    console.log(req.body);
+    const {student_id, course_id, grade} = req.body;
+    const sql= 'INSERT INTO registration (student_id, course_id, grade) VALUES (?,?,?)'
+    db.query(sql, [student_id, course_id, grade], (err, result)=>{
+        if(err) throw err;
+        res.redirect('/grades');
+    });
+});
 
 
 
@@ -149,8 +176,7 @@ app.post('/editcourse/:id', (req, res)=>{
 
 
 
-
-
+// Run Server
 app.listen(port, ()=>{
     console.log("Server is rinning on port: "+port)
 })

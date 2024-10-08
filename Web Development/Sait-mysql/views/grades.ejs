@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Grades</title>
+</head>
+<body>
+    <h1> Select a Student and Course to Update Grades </h1>
+    <form action="/addgrades" method="post">
+    <select name="student_id">
+        <% studentList.forEach(student => { %>
+            <option value="<%= student.id %>" > <%= student.firstname %> <%= student.lastname %>  </option>
+        <% }) %>
+    </select>
+    <br>
+    <select name="course_id">
+        <% courseList.forEach(course => { %>
+            <option value="<%= course.id %>" > <%= course.coursename %> </option>
+        <% }) %>
+    </select>
+    <br>
+    <input name="grade"> Grade Value</input>
+    <br>
+    <button type="submit">Submit</button><br>
+    </form>
+    
+</body>
+</html>
