@@ -3,6 +3,8 @@ const sequelize = require('./utils/database-seq');
 
 // Import models
 const Student = require('./models/student');
+const Courses = require('./models/courses');
+
 
 
 const app= express();
@@ -21,6 +23,10 @@ sequelize.sync({force:false})
 
 
 //ENDPOINTS 
+
+// ======================================================================================
+//  STUDENTS
+// ======================================================================================
 // Retreive all students
 // async is used to indicate a medthod that contains promises (processes requiring completion before moving forward)
 app.get('/', async(req,res)=>{
@@ -69,12 +75,64 @@ app.get('/deletestudent/:id', async (req, res)=>{
     await Student.destroy({where: {id: req.params.id}})
     res.redirect('/')
 });
+// ========================================================================
+// COURSES
+// ========================================================================
+
+// retrieve all students from db
+app.get('/courses', async (req, res)=>{
+    const courses = await Courses.findAll();
+    // console.log(students);
+    res.render('courses', {courses})
+
+
+    });
+// adding students 
+
+// load student registration form
+app.get('/addcourse', (req, res)=>{
+    res.render('add-course')
+
+});
+// post for student add
+app.post('/addcourse', async (req, res)=>{
+    console.log(req.body);
+    const {coursename, reference, teacher} = req.body
+  
+    // insert data into the database
+    await Courses.create({coursename, reference, teacher});
+    res.redirect('/');
+
+});
+// edit details of a student
+// using a path parameter (:id)
+app.get('/editcourse/:id', async (req, res)=>{
+       // use find by pk to find by primary key
+    // takes the id to search as a aparameter
+    const course = await Courses.findByPk(req.params.id);
+    res.render('edit-courses', {course})
+});
+
+// handles update details 
+app.post('/editcourse/:id', async (req, res)=>{
+    const {coursename, reference, teacher} = req.body;
+    await Courses.update({coursename, reference, teacher},{
+        where: {id: req.params.id}
+    });
+    res.redirect('/courses')
+}); 
+
+// Delete 
+app.get('/deletecourses/:id', async (req, res)=>{
+    await Courses.destroy({where: {id: req.params.id}})
+    res.redirect('/courses')
+});
 
 
 
-
-
-
+// ===============================================================================
+// Server
+// ==============================================================================
 // Runs Server
 app.listen(port , ()=>{
     console.log("Server is running")
