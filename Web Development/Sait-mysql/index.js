@@ -141,28 +141,40 @@ app.post('/editcourse/:id', (req, res)=>{
 // ===============================================================================
 // Grades Endpoints
 // ===============================================================================
-
-app.get('/grades' , (req, res)=>{
-    const sql= 'SELECT * FROM students';
-    const sql2 = 'SELECT * FROM courses';
-    db.query(sql,(err, result)=>{
-        db.query(sql2, (err,result2)=>{
-            // console.log(result, result2);
-            res.render('grades', {studentList: result, courseList:result2 })
-        })
-    })
-});
-
-app.post('/addgrades', (req, res)=>{
-    console.log(req.body);
-    const {student_id, course_id, grade} = req.body;
-    const sql= 'INSERT INTO registration (student_id, course_id, grade) VALUES (?,?,?)'
-    db.query(sql, [student_id, course_id, grade], (err, result)=>{
-        if(err) throw err;
-        res.redirect('/grades');
+// Loading the page
+app.get('/addgrade' , (req, res)=>{
+    // retrieve students 
+    const studentQuery= 'SELECT * FROM students';
+    // retrieve courses
+    const courseQuery = 'SELECT * FROM courses';
+    // run students query
+    db.query(studentQuery,(err, students)=>{
+        // run student query
+        db.query(courseQuery, (err,courses)=>{
+            // Pass results to grades page
+            res.render('grades', {students, courses})
+        });
     });
 });
-
+// handling grade submission
+app.post('/addgrade', (req, res)=>{
+    console.log(req.body);
+    const {student_id, course_id, grade} = req.body;
+    const sql= 'INSERT INTO registration (student_id, course_id, grade) VALUES (?,?,?)';
+    db.query(sql, [student_id, course_id, grade], (err, result)=>{
+        if(err) throw err;
+        console.log("Grades Updated")
+        res.redirect('/addgrade');
+    });
+});
+// show all student grades
+app.get('/all-grades', (req, res)=>{
+    const sql = 'SELECT students.firstname, students.lastname, courses.coursename, registration.grade FROM students JOIN registration ON students.id=registration.student_id JOIN courses ON courses.id=registration.course_id';
+    db.query(sql, (err, result)=>{
+        if(err) throw err;
+        res.render('all-grades', {studentGrades: result})
+    });
+});
 
 
 

@@ -8,18 +8,21 @@
 <body>
     <h1> Select a Student and Course to Update Grades </h1>
     <form action="/addgrades" method="post">
+        <label>Student</label>
     <select name="student_id">
-        <% studentList.forEach(student => { %>
-            <option value="<%= student.id %>" > <%= student.firstname %> <%= student.lastname %>  </option>
+        <% students.forEach(student => { %>
+            <option value="<%= student.id %>"> <%= student.firstname %> <%= student.lastname %>  </option>
         <% }) %>
     </select>
-    <br>
+    <br><hr>
+    <label>Courses</label>
     <select name="course_id">
-        <% courseList.forEach(course => { %>
+        <% courses.forEach(course => { %>
             <option value="<%= course.id %>" > <%= course.coursename %> </option>
         <% }) %>
     </select>
-    <br>
+    <br><hr>
+    <label>Grade</label>
     <input name="grade"> Grade Value</input>
     <br>
     <button type="submit">Submit</button><br>
