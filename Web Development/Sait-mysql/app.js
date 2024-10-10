@@ -48,7 +48,7 @@ app.post('/add', async(req, res)=>{
     // insert data into the database
     await Student.create({firstname, lastname, email, age});
     res.redirect('/');
-})
+});
 
 // update with sequelize
 app.get('/edit/:id', async (req, res)=>{
@@ -79,7 +79,7 @@ app.get('/deletestudent/:id', async (req, res)=>{
 // COURSES
 // ========================================================================
 
-// retrieve all students from db
+// retrieve all courses from db
 app.get('/courses', async (req, res)=>{
     const courses = await Courses.findAll();
     // console.log(students);
@@ -101,7 +101,7 @@ app.post('/addcourse', async (req, res)=>{
   
     // insert data into the database
     await Courses.create({coursename, reference, teacher});
-    res.redirect('/');
+    res.redirect('/courses');
 
 });
 // edit details of a student
@@ -127,7 +127,27 @@ app.get('/deletecourses/:id', async (req, res)=>{
     await Courses.destroy({where: {id: req.params.id}})
     res.redirect('/courses')
 });
+// ==============================================================================
+// GRADES
+// ==============================================================================
 
+// app.get('/add-grade', async (req, res)=>{
+//     // use find by pk to find by primary key
+//  // takes the id to search as a aparameter
+//  const students = await Student.findAll();
+//  const courses = await Courses.findAll();
+
+
+//  res.render('grades', {course})
+// });
+
+// app.post('/add-grade/:id', async (req, res)=>{
+//     const {coursename, reference, teacher} = req.body;
+//     await Courses.update({coursename, reference, teacher},{
+//         where: {id: req.params.id}
+//     });
+//     res.redirect('/courses')
+// }); 
 
 
 // ===============================================================================

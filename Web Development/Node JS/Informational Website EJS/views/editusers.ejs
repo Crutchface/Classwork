@@ -1,0 +1,26 @@
+<div class="main">
+    <h1>Edit the Following Course</h1>
+<form action="/edit/<%= user.id %>" method="post">
+    <label for="">First Name</label>
+   <input type="text" name="firstname" value="<%= user.firstname %>"><br>
+
+   <label for="">Last Name</label>
+   <input type="text" name="lastname" value="<%= user.lastname %>"><br>
+
+   <label for="">Email</label>
+   <input type="text" name="email" value="<%= user.email %>"><br>
+
+   <label for="">City</label>
+   <input type="text" name="city" value="<%= user.city %>"><br>
+
+   <label for="">Postal</label>
+   <input type="text" name="postal" value="<%= user.postal %>"><br>
+   
+   <label for="">Message</label>
+   <input type="text" name="message" value="<%= user.message %>"><br>
+
+
+
+    <button  type="submit">Update user</button>
+</form>
+</div>

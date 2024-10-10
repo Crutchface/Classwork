@@ -1,63 +1,32 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" type="text/css" href="CSS/style.css">
-    <link rel="icon" href="data:,">
-
-</head>
-<body> -->
-  
 <%- include('includes/header.ejs') %>
-    <!-- <header class="header" >
-        <h1 class="headerText">Welcome to the page about Dungeons and Dragons</h1>
-    </header> -->
-
-    <div class = "main">
-    <p>Contact our admin here</p>
-    <br>
-    <br>
-    <table>
-        <tr>
-          <th>Company</th>
-          <th>Contact</th>
-          <th>Country</th>
-        </tr>
-        <tr>
-          <td>Alfreds Futterkiste</td>
-          <td>Maria Anders</td>
-          <td>Germany</td>
-        </tr>
-        <tr>
-          <td>Centro comercial Moctezuma</td>
-          <td>Francisco Chang</td>
-          <td>Mexico</td>
-        </tr>
-      </table>
-    </div>
-    
+   
+<div class="main">
+<h1> Add your information here! </h1>
     <form class="contactForm" action="/add-user" method="post">
-        <div class="inputDiv"><label for="firstName">First Name: </label>
-            <input type="text" name="firstName" id="firstName">
+        <div class="inputDiv"><label for="firstname">First Name: </label>
+            <input type="text" name="firstname" id="firstName">
         <br></div>
-        <div class="inputDiv"><label for="userName">Desired Username: </label>
-            <input type="text" name="userName" id="userName">
+        <div class="inputDiv"><label for="lastName">Last Name: </label>
+            <input type="text" name="lastname" id="lastname">
         <br></div>
         <div class="inputDiv"><label for="email">Email: </label>
             <input type="email" name="email" id="email" >
         <br></div>
+        <div class="inputDiv"><label for="phone">Phone Number: </label>
+            <input type="text" name="phone" id="phone">
+        <br></div>
+        <div class="inputDiv"><label for="city">City</label>
+            <input type="text" name="city" id="city">
+        <br></div>
+        <div class="inputDiv"><label for="postal">Postal Code</label>
+            <input type="text" name="postal" id="postal">
+        <br></div>
+        <div class="inputDiv"><label for="message">Message</label>
+            <textarea type="text" name="message" id="message"></textarea>
+        <br></div>
         <button class="inputDiv" type="submit">Add User</button>
         
     </form>
-
+</div>
     <%- include('includes/footer.ejs') %>
-    <!-- <div class = "footer">
-        <footer>
-            <a href="./about">About</a><a href="./contact">Contact</a><a href="/">Home</a>
-        </footer>
-    </div>
-    
-</body>
-</html> -->
+  

@@ -38,10 +38,9 @@ footer{
 
     
 }
-.footer:link{
-    color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
+.footer a, .footer a:link, .footer a:visited, .footer a:active, .footer a:hover {
+	color: #FFFFFF;
 }
 
 .frontImages{
@@ -50,9 +49,9 @@ footer{
     align-items: center;
 }
 .main{
-    
     text-align: center;
     /* margin-bottom: 20px; */
+    /* background-color: aqua; */
 }
 table{
     display: flex;
@@ -68,7 +67,12 @@ table{
     justify-content: center;
 }
 a:link {
-    color: white;
+    color: rgb(0, 0, 0);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+  }
+  a:hover {
+    color: rgb(74, 11, 11);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-decoration: none;
   }
@@ -83,7 +87,7 @@ a:link {
 }
 
 a:visited {
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: none;
   }
 
@@ -96,10 +100,10 @@ a:visited {
   } */
 .inputDiv{
    
-   margin-left: 30%;
+   /* margin-left: 30%; */
 }
 li{
     
-    margin-left: 50%;
+    /* margin-left: 50%; */
 }
 

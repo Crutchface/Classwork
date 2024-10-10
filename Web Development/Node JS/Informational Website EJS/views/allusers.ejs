@@ -1,0 +1,21 @@
+<%- include('includes/header.ejs') %>
+<div class ="main">
+<h1>All Users and Comments</h1>
+<ul>
+    <% user.forEach(user => { %>
+        <li>
+            <%= user.firstname+ " | " + user.lastname+ " | " + user.email+ " | " + user.message %>
+            <a href="edit/<%= user.id %>">Edit</a>
+            <a href="delete/<%= user.id %>">Delete</a>
+        </li>  
+       
+    <% }) %>
+</ul>
+</div>
+
+
+
+
+
+<%- include('includes/footer.ejs') %>
+   
