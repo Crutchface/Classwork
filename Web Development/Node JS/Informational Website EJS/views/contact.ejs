@@ -1,6 +1,22 @@
+<!-- Contact Page - Chris Ferguson - Node Assignment -->
+
 <%- include('includes/header.ejs') %>
    
+<% if (errorMessages) { %>
+    <ol>
+        <% errorMessages.forEach(error => { %>
+         <li><%= error %></li>
+        <% }); %>
+        </ol>
+
+<% } else { %>
+
+<% } %>
+
 <div class="main">
+
+ 
+    <div class="container">
 <h1> Add your information here! </h1>
     <form class="contactForm" action="/add-user" method="post">
         <div class="inputDiv"><label for="firstname">First Name: </label>
@@ -27,6 +43,7 @@
         <button class="inputDiv" type="submit">Add User</button>
         
     </form>
+</div>
 </div>
     <%- include('includes/footer.ejs') %>
   

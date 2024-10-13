@@ -1,3 +1,5 @@
+<!-- Users Page - Chris Ferguson - Node Assignment -->
+
 <%- include('includes/header.ejs') %>
 <div class ="main">
 <h1>All Users and Comments</h1>
@@ -5,8 +7,8 @@
     <% user.forEach(user => { %>
         <li>
             <%= user.firstname+ " | " + user.lastname+ " | " + user.email+ " | " + user.message %>
-            <a href="edit/<%= user.id %>">Edit</a>
-            <a href="delete/<%= user.id %>">Delete</a>
+            <a href="edit/<%= user.id %>" class="editbutton">Edit</a>
+            <a href="delete/<%= user.id %>" class="editbutton">Delete</a>
         </li>  
        
     <% }) %>

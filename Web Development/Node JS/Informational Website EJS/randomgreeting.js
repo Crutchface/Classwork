@@ -1,3 +1,6 @@
+// Chris Ferguson - Node JS Assignment
+// Pulls a random quote from a list of Dungeons and Dragons characters 
+
 const greeting = [
     'Elminster Aumar: "Magic is the most powerful force in the universe, but it can also be a double-edged sword."',
 

@@ -1,10 +1,13 @@
-// Import Datatypes
+// Chris Ferguson - Node JS Assignment
+
+// User model with messages to database 
+// Import Datatypes from sequelize
 const {DataTypes}= require('sequelize');
 
-// Import connection 
+// Import connection information
 const sequelize=require('../utils/database');
 
-// creating the model
+// creating the user model with messages
 const User = sequelize.define('User', {
     firstname:{
         type: DataTypes.STRING,

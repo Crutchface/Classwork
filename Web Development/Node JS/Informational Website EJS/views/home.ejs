@@ -1,41 +1,25 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home EJS</title>
-    <link rel="stylesheet" type="text/css" href="CSS/style.css">
-    <link rel="icon" href="data:,">
+<!-- Home Page - Chris Ferguson - Node Assignment -->
 
-</head>
-<body> -->
-    
 <%- include('includes/header.ejs') %>
-    <!-- <header class="header" >
-        <h1 class="headerText">Welcome to the page about Dungeons and Dragons</h1>
-    </header> -->
+  
 
     <div class = "main">
-    <p>This is my homepage.Here you could find all sorts of information about dungeons and dragons. </p>
+    <br>
+        <h2>This is my homepage.Here you could find all sorts of information about dungeons and dragons. </h2>
+        <h6>Click on a book to purchase the books you need. </h6>
     <br>
     <br>
     <div class="frontImages">
-        <img src="./images/monster.jpg" width =300>
-        <img src="./images/player.jpg" width =420>
-
+        <a class="bookimage" href="https://www.amazon.ca/Dungeons-Dragons-Rpg-Players-Handbook/dp/0786969512/"><img src="./images/playersHandbook.jpg" width =300></a>
+        <a class="bookimage" href="https://www.amazon.ca/Dungeons-Dragons-Rpg-Dungeon-Masters/dp/0786969520/"><img src="./images/dungeonMasters.jpg" width =300></a>
+        <a class="bookimage" href="https://www.amazon.ca/Dungeons-Dragons-Rpg-Monster-Manual/dp/0786969547/"><img src="./images/monsterManual.jpg" width =300></a>
+<br>
     </div>
-
+<!-- Quote of the Day -->
+    <br>
     <P class="quoteOfTheDay"><%= greet %></P>
-
-
+    <br>
     </div>
 
     <%- include('includes/footer.ejs') %>
-    <!-- <div class = "footer">
-        <footer>
-            <a href="./about">About</a><a href="./contact">Contact</a><a href="/">Home</a>
-        </footer>
-    </div>
-    
-</body>
-</html> -->
+   

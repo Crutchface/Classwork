@@ -1,6 +1,10 @@
+<!-- Edit User Page - Chris Ferguson - Node Assignment -->
+
+<%- include('includes/header.ejs') %>
+
 <div class="main">
-    <h1>Edit the Following Course</h1>
-<form action="/edit/<%= user.id %>" method="post">
+    <h1>Edit the Following User</h1>
+<form action="/agentedit/<%= user.id %>" method="post">
     <label for="">First Name</label>
    <input type="text" name="firstname" value="<%= user.firstname %>"><br>
 
@@ -24,3 +28,5 @@
     <button  type="submit">Update user</button>
 </form>
 </div>
+
+<%- include('includes/footer.ejs') %>
