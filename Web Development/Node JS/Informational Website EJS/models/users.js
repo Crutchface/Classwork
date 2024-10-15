@@ -1,4 +1,4 @@
-// Chris Ferguson - Node JS Assignment
+// Chris Ferguson - Node JS Assignment - SQL information 
 
 // User model with messages to database 
 // Import Datatypes from sequelize

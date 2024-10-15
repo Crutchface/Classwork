@@ -57,17 +57,25 @@ app.set('view engine', 'ejs');
 // set our endpoints 
 // =======================================================
 
+/**-----------------------
+ * !  Homepage Endpoint
+ *------------------------**/
 // Get endpoint to load homepage
 app.get('/', (req, res)=>{
     const greeting =randomGreeting.websiteGreeting()
     res.render('home', {greet:greeting, pageTitle: "Welcome to the place!"});
 });
 
+/**-----------------------
+ * !  Contact Endpoint
+ *------------------------**/
 // Get endpoint to render Contact Page
 app.get('/contact', (req, res)=>{
     res.render('contact',  {pageTitle: "Contact us here and Sign Up for the news-letter"});
 });
-
+/**-----------------------
+ * !  Add User Endpoint
+ *------------------------**/
 // Add User and messages POST to write to DB 
 app.post('/add-user', 
     // first name last name validation using express-validator
@@ -100,12 +108,16 @@ app.post('/add-user',
     // uses a redirect using querys to pass info
     res.redirect(`/thankyou?firstname=${firstname}&lastname=${lastname}&email=${email}&pageTitle=${pageTitle}` )
 });
-
+/**-----------------------
+ * !  About Endpoint
+ *------------------------**/
 // get endpoint to render about page  
 app.get('/about', (req, res)=>{
     res.render('about', {pageTitle: "About us!"});
 });
-
+/**-----------------------
+ * !  Thank you Endpoint
+ *------------------------**/
 //  Get Endpoint to render thank you page after submission
 app.get('/thankyou', (req, res)=>{
     const firstname = req.query.firstname;
@@ -115,6 +127,9 @@ app.get('/thankyou', (req, res)=>{
     res.render('thankyou',{firstname:firstname, lastname: lastname, email:email, pageTitle:pageTitle});
 });
 
+/**-----------------------
+ * !  All Users  Endpoint
+ *------------------------**/
 //  get endpoint to load allusers page 
 app.get('/allusers', async (req, res)=>{
     const user = await User.findAll();
@@ -159,6 +174,7 @@ app.get('/delete/:id', async (req, res)=>{
     await User.destroy({where: {id: req.params.id}})
     res.redirect('/allusers');
 });
+
 
 // ============================================================
 // 404 Handler 
