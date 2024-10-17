@@ -26,21 +26,21 @@ const Sequelize = require('sequelize');
 //  *------------------------------------------------------------------------**/
 
 // // Create my connection credentials to db
-// const sequelize=new Sequelize('informational_website', 'root', 'ninrez', {
-//     host: 'localhost',
-//     dialect: 'mysql'
-// });
-
-
-/**------------------------------------------------------------------------
- * !                              Sams SERVER 
- *   
- *------------------------------------------------------------------------**/
-
-const sequelize=new Sequelize('CPRG212', 'root', 'Cprg212user', {
+const sequelize=new Sequelize('informational_website', 'root', 'ninrez', {
     host: 'localhost',
     dialect: 'mysql'
 });
 
-// exports the connection to index.js
+
+// /**------------------------------------------------------------------------
+//  * !                              Sams SERVER 
+//  *   
+//  *------------------------------------------------------------------------**/
+
+// const sequelize=new Sequelize('CPRG212', 'root', 'Cprg212user', {
+//     host: 'localhost',
+//     dialect: 'mysql'
+// });
+
+// // exports the connection to index.js
 module.exports= sequelize;
