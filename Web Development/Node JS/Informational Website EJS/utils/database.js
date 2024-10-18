@@ -20,16 +20,16 @@
 // ) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 const Sequelize = require('sequelize');
-// /**------------------------------------------------------------------------
-//  * !                              MY SERVER 
-//  *   
-//  *------------------------------------------------------------------------**/
+// // /**------------------------------------------------------------------------
+// //  * !                              MY SERVER 
+// //  *   
+// //  *------------------------------------------------------------------------**/
 
-// // Create my connection credentials to db
-const sequelize=new Sequelize('informational_website', 'root', 'ninrez', {
-    host: 'localhost',
-    dialect: 'mysql'
-});
+// // // Create my connection credentials to db
+// const sequelize=new Sequelize('informational_website', 'root', 'ninrez', {
+//     host: 'localhost',
+//     dialect: 'mysql'
+// });
 
 
 // /**------------------------------------------------------------------------
@@ -37,10 +37,10 @@ const sequelize=new Sequelize('informational_website', 'root', 'ninrez', {
 //  *   
 //  *------------------------------------------------------------------------**/
 
-// const sequelize=new Sequelize('CPRG212', 'root', 'Cprg212user', {
-//     host: 'localhost',
-//     dialect: 'mysql'
-// });
+const sequelize=new Sequelize('CPRG212', 'root', 'Cprg212user', {
+    host: 'localhost',
+    dialect: 'mysql'
+});
 
 // // exports the connection to index.js
 module.exports= sequelize;
